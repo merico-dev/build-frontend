@@ -1,0 +1,12 @@
+{
+    "github": {
+      "name": "example-repository",
+      "url": "https://github.com/merico-dev/example-repository.git",
+      "committer": "example-committer@merico.dev"
+      },
+      "gitlab": {
+        "name": "example-repository",
+        "url": "https://gitlab.com/merico-dev/ce/example-repository.git",
+        "committer": "example-committer@merico.dev"
+      }
+  }

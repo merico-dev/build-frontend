@@ -1,0 +1,182 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2020-07-02 16:14-0300\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+msgid "About"
+msgstr "About"
+
+msgid "Add New"
+msgstr "Add New"
+
+msgid "Analysis complete"
+msgstr "Analysis complete"
+
+msgid "Are you sure about deleting the selected repositories?"
+msgstr "Are you sure about deleting the selected repositories?"
+
+msgid "Authorization successful. In line for the analysis engine."
+msgstr "Authorization successful. In line for the analysis engine."
+
+msgid "Authorizing..."
+msgstr "Authorizing..."
+
+msgid "Badges"
+msgstr "Badges"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Code has changed. Check to see if it can be pulled."
+msgstr "Code has changed. Check to see if it can be pulled."
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Contact Us"
+msgstr "Contact Us"
+
+msgid "Converting analysis results into user-visible data..."
+msgstr "Converting analysis results into user-visible data..."
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Either the project is not a git repository or the repository does not contain code."
+msgstr "Either the project is not a git repository or the repository does not contain code."
+
+msgid "Full analysis running"
+msgstr "Full analysis running"
+
+msgid "Full analysis running:"
+msgstr "Full analysis running:"
+
+msgid "Go to Repositories"
+msgstr "Go to Repositories"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Impact"
+msgstr "Impact"
+
+msgid "Learn more"
+msgstr "Learn more"
+
+msgid "My Dev Share Ranking"
+msgstr "My Dev Share Ranking"
+
+msgid "My Dev Share Ranking Progress"
+msgstr "My Dev Share Ranking Progress"
+
+msgid "Not a repo"
+msgstr "Not a repo"
+
+msgid "Pre-analysis complete"
+msgstr "Pre-analysis complete"
+
+msgid "Pre-analysis complete. We can now get the language proportion, number of developers, and number of submissions."
+msgstr "Pre-analysis complete. We can now get the language proportion, number of developers, and number of submissions."
+
+msgid "Pre-analysis running"
+msgstr "Pre-analysis running"
+
+msgid "Preparing report..."
+msgstr "Preparing report..."
+
+msgid "Privacy"
+msgstr "Privacy"
+
+msgid "Productivity"
+msgstr "Productivity"
+
+msgid "Quality"
+msgstr "Quality"
+
+msgid "Queued"
+msgstr "Queued"
+
+msgid "Repositories"
+msgstr "Repositories"
+
+msgid "Running a full analysis on each commit..."
+msgstr "Running a full analysis on each commit..."
+
+msgid "Running pre-analysis. This stage is usually two minutes."
+msgstr "Running pre-analysis. This stage is usually two minutes."
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Sign Out"
+msgstr "Sign Out"
+
+msgid "System error"
+msgstr "System error"
+
+msgid "Terms"
+msgstr "Terms"
+
+msgid "The analysis completed successfully."
+msgstr "The analysis completed successfully."
+
+msgid "The analysis engine had an unexpected problem. Please restart processing."
+msgstr "The analysis engine had an unexpected problem. Please restart processing."
+
+msgid "The analysis engine had an unknown problem. Please restart processing."
+msgstr "The analysis engine had an unknown problem. Please restart processing."
+
+msgid "The repository contains an unsupported language."
+msgstr "The repository contains an unsupported language."
+
+msgid "The selected repositories have been deleted."
+msgstr "The selected repositories have been deleted."
+
+msgid "The selected repositories will only be removed from Merico and will not affect Github or Gitlab."
+msgstr "The selected repositories will only be removed from Merico and will not affect Github or Gitlab."
+
+msgid "There is nothing to see here. Try adding a repository to see its analysis."
+msgstr "There is nothing to see here. Try adding a repository to see its analysis."
+
+msgid "Total processed:"
+msgstr "Total processed:"
+
+msgid "Unable to delete selected repositories."
+msgstr "Unable to delete selected repositories."
+
+msgid "Unable to pull code because of a problem with the username or password"
+msgstr "Unable to pull code because of a problem with the username or password"
+
+msgid "Unauthorized"
+msgstr "Unauthorized"
+
+msgid "Unknown error"
+msgstr "Unknown error"
+
+msgid "Unsupported language"
+msgstr "Unsupported language"
+
+msgid "User Avatar"
+msgstr "User Avatar"
+
+msgid "{0, plural, one {contributor} other {contributors}}"
+msgstr "{0, plural, one {contributor} other {contributors}}"
+
+msgid "{0, plural, one {repository} other {repositories}}"
+msgstr "{0, plural, one {repository} other {repositories}}"

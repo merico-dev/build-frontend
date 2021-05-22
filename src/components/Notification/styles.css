@@ -1,0 +1,39 @@
+/* React CSS Transition API States (ENTER & LEAVE) for Notifications Panel */
+/* Please do _NOT_ modify the classNames defined here without changing references inside the Notifications Components! */
+
+.notification-panel-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.notification-panel-enter-active {
+  opacity: 1;
+  transform: scale(1.0);
+  transition: all 400ms;
+}
+.notification-panel-exit {
+  opacity: 1;
+  transform: scale(1.0);
+}
+.notification-panel-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 400ms;
+}
+
+.notification-item-enter {
+  opacity: 0;
+  transform: rotateX(-90deg);
+}
+.notification-item-enter-active {
+  opacity: 1;
+  transform: rotateX(0deg);
+  transition: all 500ms ease-out;
+}
+.notification-item-exit {
+  opacity: 1;
+}
+.notification-item-exit-active {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 500ms ease-out;
+}

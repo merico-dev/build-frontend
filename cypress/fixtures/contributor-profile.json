@@ -1,0 +1,470 @@
+{
+  "profile": {
+    "email": "MericoE2E@merico.gonze.com",
+    "userId": 100,
+    "displayName": "MericoE2E Contributor",
+    "username": "merico-E2E-contributor",
+    "profileUrl": "https://github.com/merico-dev",
+    "photoUrl": "https://avatars.githubusercontent.com/u/1742233?v=4",
+    "provider": "github",
+    "topLanguages": [
+      {
+        "language": "JavaScript",
+        "eloc": 3346,
+        "percentile": 10
+      },
+      {
+        "language": "Java",
+        "eloc": 2831,
+        "percentile": 10
+      }
+    ],
+    "badges": [
+      {
+        "id": 146,
+        "name": "Linguist for Java",
+        "type": "linguist",
+        "grade": "GOLD",
+        "description": "2K+ ELOCs in #Java",
+        "rankNumerator": "2831",
+        "rankDenominator": "",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/linguist_userId_48_2021-04-29_rand0.17506055638011642.png",
+        "createdAt": "2021-04-16T18:08:13.108Z",
+        "updatedAt": "2021-04-16T18:08:13.107Z",
+        "BadgeType": {
+          "title": "Linguist",
+          "criteria": "Merico Build analyzes commits to all repositories submitted by the developer. Only code in commits by emails claimed by the developer is included. The unit of measure is ELOC - see below for more information.",
+          "icon": "<path d=\"M7.0625 9.51562C7.0625 9.58438 7.11562 9.64062 7.17969 9.64062H10.0703C10.1344 9.64062 10.1875 9.58438 10.1875 9.51562V8.76562C10.1875 8.69688 10.1344 8.64062 10.0703 8.64062H7.17969C7.11562 8.64062 7.0625 8.69688 7.0625 8.76562V9.51562ZM4.01719 9.61094L7.01719 7.09531C7.07656 7.04531 7.07656 6.95312 7.01719 6.90312L4.01719 4.38906C3.99908 4.37366 3.97693 4.36378 3.95337 4.36059C3.92981 4.35741 3.90583 4.36105 3.88428 4.37108C3.86273 4.38112 3.84451 4.39713 3.83179 4.41721C3.81906 4.43729 3.81237 4.4606 3.8125 4.48438V5.46406C3.8125 5.50156 3.82812 5.53594 3.85781 5.55937L5.57344 7L3.85781 8.44063C3.84385 8.45232 3.83257 8.46688 3.82475 8.48333C3.81693 8.49978 3.81275 8.51773 3.8125 8.53594V9.51562C3.8125 9.62187 3.93594 9.67969 4.01719 9.61094ZM12.75 0.75H1.25C0.973437 0.75 0.75 0.973437 0.75 1.25V12.75C0.75 13.0266 0.973437 13.25 1.25 13.25H12.75C13.0266 13.25 13.25 13.0266 13.25 12.75V1.25C13.25 0.973437 13.0266 0.75 12.75 0.75ZM12.125 12.125H1.875V1.875H12.125V12.125Z\" fill=\"white\" transform=\"translate(46, 7)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 147,
+        "name": "Top 7 contributor by Dev Share",
+        "type": "topContributor",
+        "grade": "IRON",
+        "description": "Top 7 contributor by Dev Share",
+        "rankNumerator": "7",
+        "rankDenominator": "7",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/topContributor_userId_48_2021-04-23_rand0.21293979907432936.png",
+        "createdAt": "2021-04-16T18:09:10.070Z",
+        "updatedAt": "2021-04-16T18:09:10.069Z",
+        "BadgeType": {
+          "title": "Top Contributor",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M13.0564 2.32044L10.0158 4.19387L7.10016 0.304811C7.08843 0.289158 7.07321 0.276453 7.05572 0.267702C7.03823 0.258951 7.01894 0.254395 6.99938 0.254395C6.97982 0.254395 6.96052 0.258951 6.94303 0.267702C6.92554 0.276453 6.91032 0.289158 6.89859 0.304811L3.98453 4.19387L0.942344 2.32044C0.853282 2.26575 0.737657 2.33919 0.751719 2.44387L1.94547 11.5157C1.96266 11.6392 2.06891 11.7345 2.19547 11.7345H11.8064C11.9314 11.7345 12.0392 11.6407 12.0548 11.5157L13.2486 2.44387C13.2611 2.33919 13.147 2.26575 13.0564 2.32044ZM11.0877 10.6657H2.91109L2.07047 4.26887L4.25484 5.61419L7.00016 1.95169L9.74547 5.61419L11.9298 4.26887L11.0877 10.6657ZM7.00016 5.95325C6.02984 5.95325 5.24078 6.74231 5.24078 7.71262C5.24078 8.68294 6.02984 9.472 7.00016 9.472C7.97047 9.472 8.75953 8.68294 8.75953 7.71262C8.75953 6.74231 7.97047 5.95325 7.00016 5.95325ZM7.00016 8.46731C6.58453 8.46731 6.24703 8.12981 6.24703 7.71262C6.24703 7.297 6.58453 6.95794 7.00016 6.95794C7.41578 6.95794 7.75328 7.29544 7.75328 7.71262C7.75328 8.12825 7.41578 8.46731 7.00016 8.46731Z\" fill=\"white\" transform=\"translate(21, 8)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 148,
+        "name": "Tailblazer for getmdl-select",
+        "type": "trailblazer",
+        "grade": "NONE",
+        "description": "Contributor #19",
+        "rankNumerator": "19",
+        "rankDenominator": "19",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/trailblazer_userId_48_2021-04-23_rand0.7576465704134872.png",
+        "createdAt": "2021-04-16T18:09:10.120Z",
+        "updatedAt": "2021-04-16T18:09:10.120Z",
+        "BadgeType": {
+          "title": "Trailblazer",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M11.5 10.5C11.5 8.75625 10.4781 7.25 9 6.54844V3.95781C9 3.72187 8.91719 3.49375 8.76406 3.31406L6.38281 0.490625C6.28281 0.371875 6.14062 0.3125 6 0.3125C5.85938 0.3125 5.71719 0.371875 5.61719 0.490625L3.23594 3.31406C3.08385 3.49412 3.00029 3.72212 3 3.95781V6.54844C1.52188 7.25 0.5 8.75625 0.5 10.5H2.94531C2.90937 10.6125 2.89062 10.7344 2.89062 10.8719C2.89062 11.2172 3.00937 11.5547 3.225 11.8219C3.401 12.0404 3.6341 12.2059 3.89844 12.3C4.25938 13.1438 5.07969 13.6875 6 13.6875C6.45469 13.6875 6.89531 13.5531 7.27188 13.3C7.64063 13.0531 7.92656 12.7078 8.1 12.3C8.36423 12.2065 8.59734 12.0415 8.77344 11.8234C8.98935 11.5538 9.10725 11.2189 9.10781 10.8734C9.10781 10.7422 9.09062 10.6172 9.05937 10.5016H11.5V10.5ZM9.91094 8.70938C10.0578 8.9375 10.1766 9.18281 10.2625 9.4375H8.9375V7.72969C9.32733 7.98408 9.65904 8.31793 9.91094 8.70938ZM4.0625 6.54844V3.98125L6 1.68438L7.9375 3.98125V9.4375H4.0625V6.54844ZM1.7375 9.4375C1.82344 9.18281 1.94219 8.9375 2.08906 8.70938C2.34375 8.31563 2.675 7.98281 3.0625 7.72969V9.4375H1.7375ZM7.81406 11.2531C7.73281 11.3 7.63906 11.3187 7.54688 11.3062L7.24219 11.2688L7.19844 11.5719C7.11406 12.1641 6.59844 12.6109 6 12.6109C5.40156 12.6109 4.88594 12.1641 4.80156 11.5719L4.75781 11.2672L4.45312 11.3062C4.3605 11.3173 4.26678 11.2981 4.18594 11.2516C4.05 11.1734 3.96562 11.0281 3.96562 10.8703C3.96562 10.7047 4.05781 10.5672 4.19375 10.4984H7.80781C7.94531 10.5688 8.03594 10.7063 8.03594 10.8703C8.03437 11.0297 7.95 11.1766 7.81406 11.2531ZM5.25 5.25C5.25 5.44891 5.32902 5.63968 5.46967 5.78033C5.61032 5.92098 5.80109 6 6 6C6.19891 6 6.38968 5.92098 6.53033 5.78033C6.67098 5.63968 6.75 5.44891 6.75 5.25C6.75 5.05109 6.67098 4.86032 6.53033 4.71967C6.38968 4.57902 6.19891 4.5 6 4.5C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z\" fill=\"white\" transform=\"translate(41, 6)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 149,
+        "name": "Linguist for JavaScript",
+        "type": "linguist",
+        "grade": "GOLD",
+        "description": "3K+ ELOCs in #JavaScript",
+        "rankNumerator": "3346",
+        "rankDenominator": "",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/linguist_userId_48_2021-04-29_rand0.336082505306998.png",
+        "createdAt": "2021-04-16T18:11:33.135Z",
+        "updatedAt": "2021-04-16T18:11:33.134Z",
+        "BadgeType": {
+          "title": "Linguist",
+          "criteria": "Merico Build analyzes commits to all repositories submitted by the developer. Only code in commits by emails claimed by the developer is included. The unit of measure is ELOC - see below for more information.",
+          "icon": "<path d=\"M7.0625 9.51562C7.0625 9.58438 7.11562 9.64062 7.17969 9.64062H10.0703C10.1344 9.64062 10.1875 9.58438 10.1875 9.51562V8.76562C10.1875 8.69688 10.1344 8.64062 10.0703 8.64062H7.17969C7.11562 8.64062 7.0625 8.69688 7.0625 8.76562V9.51562ZM4.01719 9.61094L7.01719 7.09531C7.07656 7.04531 7.07656 6.95312 7.01719 6.90312L4.01719 4.38906C3.99908 4.37366 3.97693 4.36378 3.95337 4.36059C3.92981 4.35741 3.90583 4.36105 3.88428 4.37108C3.86273 4.38112 3.84451 4.39713 3.83179 4.41721C3.81906 4.43729 3.81237 4.4606 3.8125 4.48438V5.46406C3.8125 5.50156 3.82812 5.53594 3.85781 5.55937L5.57344 7L3.85781 8.44063C3.84385 8.45232 3.83257 8.46688 3.82475 8.48333C3.81693 8.49978 3.81275 8.51773 3.8125 8.53594V9.51562C3.8125 9.62187 3.93594 9.67969 4.01719 9.61094ZM12.75 0.75H1.25C0.973437 0.75 0.75 0.973437 0.75 1.25V12.75C0.75 13.0266 0.973437 13.25 1.25 13.25H12.75C13.0266 13.25 13.25 13.0266 13.25 12.75V1.25C13.25 0.973437 13.0266 0.75 12.75 0.75ZM12.125 12.125H1.875V1.875H12.125V12.125Z\" fill=\"white\" transform=\"translate(46, 7)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 150,
+        "name": "Tailblazer for publicity.js",
+        "type": "trailblazer",
+        "grade": "GOLD",
+        "description": "Contributor #1",
+        "rankNumerator": "1",
+        "rankDenominator": "2",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/trailblazer_userId_48_2021-04-28_rand0.0964631676773331.png",
+        "createdAt": "2021-04-16T18:11:34.559Z",
+        "updatedAt": "2021-04-16T18:11:34.558Z",
+        "BadgeType": {
+          "title": "Trailblazer",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M11.5 10.5C11.5 8.75625 10.4781 7.25 9 6.54844V3.95781C9 3.72187 8.91719 3.49375 8.76406 3.31406L6.38281 0.490625C6.28281 0.371875 6.14062 0.3125 6 0.3125C5.85938 0.3125 5.71719 0.371875 5.61719 0.490625L3.23594 3.31406C3.08385 3.49412 3.00029 3.72212 3 3.95781V6.54844C1.52188 7.25 0.5 8.75625 0.5 10.5H2.94531C2.90937 10.6125 2.89062 10.7344 2.89062 10.8719C2.89062 11.2172 3.00937 11.5547 3.225 11.8219C3.401 12.0404 3.6341 12.2059 3.89844 12.3C4.25938 13.1438 5.07969 13.6875 6 13.6875C6.45469 13.6875 6.89531 13.5531 7.27188 13.3C7.64063 13.0531 7.92656 12.7078 8.1 12.3C8.36423 12.2065 8.59734 12.0415 8.77344 11.8234C8.98935 11.5538 9.10725 11.2189 9.10781 10.8734C9.10781 10.7422 9.09062 10.6172 9.05937 10.5016H11.5V10.5ZM9.91094 8.70938C10.0578 8.9375 10.1766 9.18281 10.2625 9.4375H8.9375V7.72969C9.32733 7.98408 9.65904 8.31793 9.91094 8.70938ZM4.0625 6.54844V3.98125L6 1.68438L7.9375 3.98125V9.4375H4.0625V6.54844ZM1.7375 9.4375C1.82344 9.18281 1.94219 8.9375 2.08906 8.70938C2.34375 8.31563 2.675 7.98281 3.0625 7.72969V9.4375H1.7375ZM7.81406 11.2531C7.73281 11.3 7.63906 11.3187 7.54688 11.3062L7.24219 11.2688L7.19844 11.5719C7.11406 12.1641 6.59844 12.6109 6 12.6109C5.40156 12.6109 4.88594 12.1641 4.80156 11.5719L4.75781 11.2672L4.45312 11.3062C4.3605 11.3173 4.26678 11.2981 4.18594 11.2516C4.05 11.1734 3.96562 11.0281 3.96562 10.8703C3.96562 10.7047 4.05781 10.5672 4.19375 10.4984H7.80781C7.94531 10.5688 8.03594 10.7063 8.03594 10.8703C8.03437 11.0297 7.95 11.1766 7.81406 11.2531ZM5.25 5.25C5.25 5.44891 5.32902 5.63968 5.46967 5.78033C5.61032 5.92098 5.80109 6 6 6C6.19891 6 6.38968 5.92098 6.53033 5.78033C6.67098 5.63968 6.75 5.44891 6.75 5.25C6.75 5.05109 6.67098 4.86032 6.53033 4.71967C6.38968 4.57902 6.19891 4.5 6 4.5C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z\" fill=\"white\" transform=\"translate(41, 6)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 151,
+        "name": "Top 1 contributor by Dev Share",
+        "type": "topContributor",
+        "grade": "GOLD",
+        "description": "Top 1 contributor by Dev Share",
+        "rankNumerator": "1",
+        "rankDenominator": "2",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/topContributor_userId_48_2021-04-28_rand0.36685122575327633.png",
+        "createdAt": "2021-04-16T18:11:34.663Z",
+        "updatedAt": "2021-04-16T18:11:34.663Z",
+        "BadgeType": {
+          "title": "Top Contributor",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M13.0564 2.32044L10.0158 4.19387L7.10016 0.304811C7.08843 0.289158 7.07321 0.276453 7.05572 0.267702C7.03823 0.258951 7.01894 0.254395 6.99938 0.254395C6.97982 0.254395 6.96052 0.258951 6.94303 0.267702C6.92554 0.276453 6.91032 0.289158 6.89859 0.304811L3.98453 4.19387L0.942344 2.32044C0.853282 2.26575 0.737657 2.33919 0.751719 2.44387L1.94547 11.5157C1.96266 11.6392 2.06891 11.7345 2.19547 11.7345H11.8064C11.9314 11.7345 12.0392 11.6407 12.0548 11.5157L13.2486 2.44387C13.2611 2.33919 13.147 2.26575 13.0564 2.32044ZM11.0877 10.6657H2.91109L2.07047 4.26887L4.25484 5.61419L7.00016 1.95169L9.74547 5.61419L11.9298 4.26887L11.0877 10.6657ZM7.00016 5.95325C6.02984 5.95325 5.24078 6.74231 5.24078 7.71262C5.24078 8.68294 6.02984 9.472 7.00016 9.472C7.97047 9.472 8.75953 8.68294 8.75953 7.71262C8.75953 6.74231 7.97047 5.95325 7.00016 5.95325ZM7.00016 8.46731C6.58453 8.46731 6.24703 8.12981 6.24703 7.71262C6.24703 7.297 6.58453 6.95794 7.00016 6.95794C7.41578 6.95794 7.75328 7.29544 7.75328 7.71262C7.75328 8.12825 7.41578 8.46731 7.00016 8.46731Z\" fill=\"white\" transform=\"translate(21, 8)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 152,
+        "name": "Contribution to #publicity.js",
+        "type": "contribution",
+        "grade": "GOLD",
+        "description": "67.84% contribution",
+        "rankNumerator": "1",
+        "rankDenominator": "2",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/contribution_userId_48_2021-04-28_rand0.9628165602393819.png",
+        "createdAt": "2021-04-16T18:11:34.812Z",
+        "updatedAt": "2021-04-16T18:11:34.811Z",
+        "BadgeType": {
+          "title": "Contribution",
+          "criteria": "The developer must have had commits accepted.",
+          "icon": "<path d=\"M3.5 5.57812C3.5 5.77704 3.57902 5.9678 3.71967 6.10846C3.86032 6.24911 4.05109 6.32812 4.25 6.32812C4.44891 6.32812 4.63968 6.24911 4.78033 6.10846C4.92098 5.9678 5 5.77704 5 5.57812C5 5.37921 4.92098 5.18845 4.78033 5.04779C4.63968 4.90714 4.44891 4.82812 4.25 4.82812C4.05109 4.82812 3.86032 4.90714 3.71967 5.04779C3.57902 5.18845 3.5 5.37921 3.5 5.57812ZM9 5.57812C9 5.77704 9.07902 5.9678 9.21967 6.10846C9.36032 6.24911 9.55109 6.32812 9.75 6.32812C9.94891 6.32812 10.1397 6.24911 10.2803 6.10846C10.421 5.9678 10.5 5.77704 10.5 5.57812C10.5 5.37921 10.421 5.18845 10.2803 5.04779C10.1397 4.90714 9.94891 4.82812 9.75 4.82812C9.55109 4.82812 9.36032 4.90714 9.21967 5.04779C9.07902 5.18845 9 5.37921 9 5.57812ZM7 0C3.13438 0 0 3.13438 0 7C0 10.8656 3.13438 14 7 14C10.8656 14 14 10.8656 14 7C14 3.13438 10.8656 0 7 0ZM11.1094 11.1094C10.575 11.6438 9.95312 12.0625 9.26094 12.3562C8.54688 12.6594 7.78594 12.8125 7 12.8125C6.21406 12.8125 5.45312 12.6594 4.7375 12.3562C4.04636 12.0644 3.41857 11.6409 2.88906 11.1094C2.35469 10.575 1.93594 9.95312 1.64219 9.26094C1.34063 8.54688 1.1875 7.78594 1.1875 7C1.1875 6.21406 1.34062 5.45312 1.64375 4.7375C1.93564 4.04636 2.35912 3.41857 2.89062 2.88906C3.425 2.35469 4.04688 1.93594 4.73906 1.64219C5.45312 1.34063 6.21406 1.1875 7 1.1875C7.78594 1.1875 8.54688 1.34062 9.2625 1.64375C9.95364 1.93564 10.5814 2.35912 11.1109 2.89062C11.6453 3.425 12.0641 4.04688 12.3578 4.73906C12.6594 5.45312 12.8125 6.21406 12.8125 7C12.8125 7.78594 12.6594 8.54688 12.3562 9.2625C12.0647 9.95337 11.6412 10.5807 11.1094 11.1094ZM9.375 7.32812H8.62344C8.55781 7.32812 8.50156 7.37813 8.49687 7.44375C8.4375 8.21719 7.78906 8.82812 7 8.82812C6.21094 8.82812 5.56094 8.21719 5.50313 7.44375C5.49844 7.37813 5.44219 7.32812 5.37656 7.32812H4.625C4.60805 7.3281 4.59126 7.33153 4.57568 7.3382C4.56009 7.34487 4.54602 7.35464 4.53433 7.36692C4.52263 7.3792 4.51356 7.39372 4.50766 7.40962C4.50176 7.42551 4.49915 7.44244 4.5 7.45938C4.56875 8.77656 5.66406 9.82812 7 9.82812C8.33594 9.82812 9.43125 8.77656 9.5 7.45938C9.50085 7.44244 9.49824 7.42551 9.49234 7.40962C9.48644 7.39372 9.47737 7.3792 9.46567 7.36692C9.45398 7.35464 9.43991 7.34487 9.42432 7.3382C9.40874 7.33153 9.39195 7.3281 9.375 7.32812Z\" fill=\"white\" transform=\"translate(33, 7)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 153,
+        "name": "Tailblazer for N1",
+        "type": "trailblazer",
+        "grade": "NONE",
+        "description": "Contributor #56",
+        "rankNumerator": "56",
+        "rankDenominator": "56",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/trailblazer_userId_48_2021-04-23_rand0.6151198571909904.png",
+        "createdAt": "2021-04-16T18:18:00.499Z",
+        "updatedAt": "2021-04-16T18:18:00.498Z",
+        "BadgeType": {
+          "title": "Trailblazer",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M11.5 10.5C11.5 8.75625 10.4781 7.25 9 6.54844V3.95781C9 3.72187 8.91719 3.49375 8.76406 3.31406L6.38281 0.490625C6.28281 0.371875 6.14062 0.3125 6 0.3125C5.85938 0.3125 5.71719 0.371875 5.61719 0.490625L3.23594 3.31406C3.08385 3.49412 3.00029 3.72212 3 3.95781V6.54844C1.52188 7.25 0.5 8.75625 0.5 10.5H2.94531C2.90937 10.6125 2.89062 10.7344 2.89062 10.8719C2.89062 11.2172 3.00937 11.5547 3.225 11.8219C3.401 12.0404 3.6341 12.2059 3.89844 12.3C4.25938 13.1438 5.07969 13.6875 6 13.6875C6.45469 13.6875 6.89531 13.5531 7.27188 13.3C7.64063 13.0531 7.92656 12.7078 8.1 12.3C8.36423 12.2065 8.59734 12.0415 8.77344 11.8234C8.98935 11.5538 9.10725 11.2189 9.10781 10.8734C9.10781 10.7422 9.09062 10.6172 9.05937 10.5016H11.5V10.5ZM9.91094 8.70938C10.0578 8.9375 10.1766 9.18281 10.2625 9.4375H8.9375V7.72969C9.32733 7.98408 9.65904 8.31793 9.91094 8.70938ZM4.0625 6.54844V3.98125L6 1.68438L7.9375 3.98125V9.4375H4.0625V6.54844ZM1.7375 9.4375C1.82344 9.18281 1.94219 8.9375 2.08906 8.70938C2.34375 8.31563 2.675 7.98281 3.0625 7.72969V9.4375H1.7375ZM7.81406 11.2531C7.73281 11.3 7.63906 11.3187 7.54688 11.3062L7.24219 11.2688L7.19844 11.5719C7.11406 12.1641 6.59844 12.6109 6 12.6109C5.40156 12.6109 4.88594 12.1641 4.80156 11.5719L4.75781 11.2672L4.45312 11.3062C4.3605 11.3173 4.26678 11.2981 4.18594 11.2516C4.05 11.1734 3.96562 11.0281 3.96562 10.8703C3.96562 10.7047 4.05781 10.5672 4.19375 10.4984H7.80781C7.94531 10.5688 8.03594 10.7063 8.03594 10.8703C8.03437 11.0297 7.95 11.1766 7.81406 11.2531ZM5.25 5.25C5.25 5.44891 5.32902 5.63968 5.46967 5.78033C5.61032 5.92098 5.80109 6 6 6C6.19891 6 6.38968 5.92098 6.53033 5.78033C6.67098 5.63968 6.75 5.44891 6.75 5.25C6.75 5.05109 6.67098 4.86032 6.53033 4.71967C6.38968 4.57902 6.19891 4.5 6 4.5C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z\" fill=\"white\" transform=\"translate(41, 6)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 155,
+        "name": "Tailblazer for java-analysis-tester",
+        "type": "trailblazer",
+        "grade": "GOLD",
+        "description": "Contributor #1",
+        "rankNumerator": "1",
+        "rankDenominator": "2",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/trailblazer_userId_48_2021-04-29_rand0.2274503198051503.png",
+        "createdAt": "2021-04-29T13:52:40.527Z",
+        "updatedAt": "2021-04-29T13:52:40.527Z",
+        "BadgeType": {
+          "title": "Trailblazer",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M11.5 10.5C11.5 8.75625 10.4781 7.25 9 6.54844V3.95781C9 3.72187 8.91719 3.49375 8.76406 3.31406L6.38281 0.490625C6.28281 0.371875 6.14062 0.3125 6 0.3125C5.85938 0.3125 5.71719 0.371875 5.61719 0.490625L3.23594 3.31406C3.08385 3.49412 3.00029 3.72212 3 3.95781V6.54844C1.52188 7.25 0.5 8.75625 0.5 10.5H2.94531C2.90937 10.6125 2.89062 10.7344 2.89062 10.8719C2.89062 11.2172 3.00937 11.5547 3.225 11.8219C3.401 12.0404 3.6341 12.2059 3.89844 12.3C4.25938 13.1438 5.07969 13.6875 6 13.6875C6.45469 13.6875 6.89531 13.5531 7.27188 13.3C7.64063 13.0531 7.92656 12.7078 8.1 12.3C8.36423 12.2065 8.59734 12.0415 8.77344 11.8234C8.98935 11.5538 9.10725 11.2189 9.10781 10.8734C9.10781 10.7422 9.09062 10.6172 9.05937 10.5016H11.5V10.5ZM9.91094 8.70938C10.0578 8.9375 10.1766 9.18281 10.2625 9.4375H8.9375V7.72969C9.32733 7.98408 9.65904 8.31793 9.91094 8.70938ZM4.0625 6.54844V3.98125L6 1.68438L7.9375 3.98125V9.4375H4.0625V6.54844ZM1.7375 9.4375C1.82344 9.18281 1.94219 8.9375 2.08906 8.70938C2.34375 8.31563 2.675 7.98281 3.0625 7.72969V9.4375H1.7375ZM7.81406 11.2531C7.73281 11.3 7.63906 11.3187 7.54688 11.3062L7.24219 11.2688L7.19844 11.5719C7.11406 12.1641 6.59844 12.6109 6 12.6109C5.40156 12.6109 4.88594 12.1641 4.80156 11.5719L4.75781 11.2672L4.45312 11.3062C4.3605 11.3173 4.26678 11.2981 4.18594 11.2516C4.05 11.1734 3.96562 11.0281 3.96562 10.8703C3.96562 10.7047 4.05781 10.5672 4.19375 10.4984H7.80781C7.94531 10.5688 8.03594 10.7063 8.03594 10.8703C8.03437 11.0297 7.95 11.1766 7.81406 11.2531ZM5.25 5.25C5.25 5.44891 5.32902 5.63968 5.46967 5.78033C5.61032 5.92098 5.80109 6 6 6C6.19891 6 6.38968 5.92098 6.53033 5.78033C6.67098 5.63968 6.75 5.44891 6.75 5.25C6.75 5.05109 6.67098 4.86032 6.53033 4.71967C6.38968 4.57902 6.19891 4.5 6 4.5C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z\" fill=\"white\" transform=\"translate(41, 6)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      },
+      {
+        "id": 156,
+        "name": "Tailblazer for java-analysis-tester-2",
+        "type": "trailblazer",
+        "grade": "SILVER",
+        "description": "Contributor #2",
+        "rankNumerator": "2",
+        "rankDenominator": "2",
+        "imageUrl": "https://merico-build.s3-us-west-2.amazonaws.com/badges/trailblazer_userId_48_2021-04-29_rand0.22899881018170687.png",
+        "createdAt": "2021-04-29T14:17:09.823Z",
+        "updatedAt": "2021-04-29T14:17:09.822Z",
+        "BadgeType": {
+          "title": "Trailblazer",
+          "criteria": "Merico Build analyzes commits to a repository to verify that the badge recipient was one of the earliest contributors. The medal system shows how early. There must be at least five committers.",
+          "icon": "<path d=\"M11.5 10.5C11.5 8.75625 10.4781 7.25 9 6.54844V3.95781C9 3.72187 8.91719 3.49375 8.76406 3.31406L6.38281 0.490625C6.28281 0.371875 6.14062 0.3125 6 0.3125C5.85938 0.3125 5.71719 0.371875 5.61719 0.490625L3.23594 3.31406C3.08385 3.49412 3.00029 3.72212 3 3.95781V6.54844C1.52188 7.25 0.5 8.75625 0.5 10.5H2.94531C2.90937 10.6125 2.89062 10.7344 2.89062 10.8719C2.89062 11.2172 3.00937 11.5547 3.225 11.8219C3.401 12.0404 3.6341 12.2059 3.89844 12.3C4.25938 13.1438 5.07969 13.6875 6 13.6875C6.45469 13.6875 6.89531 13.5531 7.27188 13.3C7.64063 13.0531 7.92656 12.7078 8.1 12.3C8.36423 12.2065 8.59734 12.0415 8.77344 11.8234C8.98935 11.5538 9.10725 11.2189 9.10781 10.8734C9.10781 10.7422 9.09062 10.6172 9.05937 10.5016H11.5V10.5ZM9.91094 8.70938C10.0578 8.9375 10.1766 9.18281 10.2625 9.4375H8.9375V7.72969C9.32733 7.98408 9.65904 8.31793 9.91094 8.70938ZM4.0625 6.54844V3.98125L6 1.68438L7.9375 3.98125V9.4375H4.0625V6.54844ZM1.7375 9.4375C1.82344 9.18281 1.94219 8.9375 2.08906 8.70938C2.34375 8.31563 2.675 7.98281 3.0625 7.72969V9.4375H1.7375ZM7.81406 11.2531C7.73281 11.3 7.63906 11.3187 7.54688 11.3062L7.24219 11.2688L7.19844 11.5719C7.11406 12.1641 6.59844 12.6109 6 12.6109C5.40156 12.6109 4.88594 12.1641 4.80156 11.5719L4.75781 11.2672L4.45312 11.3062C4.3605 11.3173 4.26678 11.2981 4.18594 11.2516C4.05 11.1734 3.96562 11.0281 3.96562 10.8703C3.96562 10.7047 4.05781 10.5672 4.19375 10.4984H7.80781C7.94531 10.5688 8.03594 10.7063 8.03594 10.8703C8.03437 11.0297 7.95 11.1766 7.81406 11.2531ZM5.25 5.25C5.25 5.44891 5.32902 5.63968 5.46967 5.78033C5.61032 5.92098 5.80109 6 6 6C6.19891 6 6.38968 5.92098 6.53033 5.78033C6.67098 5.63968 6.75 5.44891 6.75 5.25C6.75 5.05109 6.67098 4.86032 6.53033 4.71967C6.38968 4.57902 6.19891 4.5 6 4.5C5.80109 4.5 5.61032 4.57902 5.46967 4.71967C5.32902 4.86032 5.25 5.05109 5.25 5.25Z\" fill=\"white\" transform=\"translate(41, 6)\"/>"
+        },
+        "User": {
+          "displayName": "MericoE2E"
+        }
+      }
+    ]
+  },
+  "repositories": [
+    {
+      "repoName": "java-analysis-tester",
+      "gitUrl": "git://github.com/merico-dev/java-analysis-tester.git",
+      "eloc": 2831,
+      "elocRank": 2,
+      "impact": 1,
+      "impactRank": 1,
+      "merges": 1,
+      "mergeRank": 4
+    },
+    {
+      "repoName": "publicity.js",
+      "gitUrl": null,
+      "eloc": 4367,
+      "elocRank": 1,
+      "impact": 0.68,
+      "impactRank": 2,
+      "merges": 0,
+      "mergeRank": 1
+    },
+    {
+      "repoName": "N1",
+      "gitUrl": null,
+      "eloc": 0,
+      "elocRank": 3,
+      "impact": 0,
+      "impactRank": 3,
+      "merges": 0,
+      "mergeRank": 1
+    },
+    {
+      "repoName": "getmdl-select",
+      "gitUrl": null,
+      "eloc": 0,
+      "elocRank": 3,
+      "impact": 0,
+      "impactRank": 3,
+      "merges": 0,
+      "mergeRank": 1
+    },
+    {
+      "repoName": "java-analysis-tester-2",
+      "gitUrl": "git://github.com/merico-dev/java-analysis-tester-2.git",
+      "eloc": 0,
+      "elocRank": 3,
+      "impact": 0,
+      "impactRank": 3,
+      "merges": 1,
+      "mergeRank": 4
+    }
+  ],
+  "progress": {
+    "gitUrl": "git://github.com/merico-dev/publicity.js.git",
+    "progress": [
+      {
+        "date": "2015-06-02T00:00:00.000Z",
+        "eloc": 0
+      },
+      {
+        "date": "2015-06-03T00:00:00.000Z",
+        "eloc": 430
+      },
+      {
+        "date": "2015-06-04T00:00:00.000Z",
+        "eloc": 881
+      },
+      {
+        "date": "2015-06-05T00:00:00.000Z",
+        "eloc": 1434
+      },
+      {
+        "date": "2015-06-06T00:00:00.000Z",
+        "eloc": 2299
+      },
+      {
+        "date": "2015-06-07T00:00:00.000Z",
+        "eloc": 4342
+      },
+      {
+        "date": "2015-06-08T00:00:00.000Z",
+        "eloc": 4367
+      },
+      {
+        "date": "2015-06-09T00:00:00.000Z",
+        "eloc": 4367
+      },
+      {
+        "date": "2015-06-10T00:00:00.000Z",
+        "eloc": 4367
+      },
+      {
+        "date": "2015-06-11T00:00:00.000Z",
+        "eloc": 4367
+      }
+    ],
+    "velocity": [
+      {
+        "date": "2015-06-02T00:00:00.000Z",
+        "eloc": 0
+      },
+      {
+        "date": "2015-06-03T00:00:00.000Z",
+        "eloc": 430
+      },
+      {
+        "date": "2015-06-04T00:00:00.000Z",
+        "eloc": 451
+      },
+      {
+        "date": "2015-06-05T00:00:00.000Z",
+        "eloc": 553
+      },
+      {
+        "date": "2015-06-06T00:00:00.000Z",
+        "eloc": 865
+      },
+      {
+        "date": "2015-06-07T00:00:00.000Z",
+        "eloc": 2043
+      },
+      {
+        "date": "2015-06-08T00:00:00.000Z",
+        "eloc": 25
+      },
+      {
+        "date": "2015-06-09T00:00:00.000Z",
+        "eloc": 0
+      },
+      {
+        "date": "2015-06-10T00:00:00.000Z",
+        "eloc": 0
+      },
+      {
+        "date": "2015-06-11T00:00:00.000Z",
+        "eloc": 0
+      }
+    ],
+    "impact": [
+      {
+        "date": "2015-06-02T00:00:00.000Z",
+        "impact": 0
+      },
+      {
+        "date": "2015-06-03T00:00:00.000Z",
+        "impact": 0.8741009867684288
+      },
+      {
+        "date": "2015-06-04T00:00:00.000Z",
+        "impact": 0.623677113326569
+      },
+      {
+        "date": "2015-06-05T00:00:00.000Z",
+        "impact": 0.3070072215554381
+      },
+      {
+        "date": "2015-06-06T00:00:00.000Z",
+        "impact": 1
+      },
+      {
+        "date": "2015-06-07T00:00:00.000Z",
+        "impact": 1
+      },
+      {
+        "date": "2015-06-08T00:00:00.000Z",
+        "impact": 1
+      },
+      {
+        "date": "2015-06-09T00:00:00.000Z",
+        "impact": 0
+      },
+      {
+        "date": "2015-06-10T00:00:00.000Z",
+        "impact": 0
+      },
+      {
+        "date": "2015-06-11T00:00:00.000Z",
+        "impact": 0
+      }
+    ],
+    "merges": [],
+    "latestCommits": [
+      {
+        "date": "2015-06-11T17:54:46.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nCleanups & Fixes\n\nClosing dismissal layer after card update, set typography for code blocks.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !17\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-10T20:36:05.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nCode Cleanups\n\nCleanups for code coverage, updating syntax issues.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !16\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-10T20:17:19.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nJS Only Climate\n\nUsing Javascript only climate\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !15\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-10T20:11:07.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nCode Climate Analysis\n\nAdding Code Climate analysis settings with a .codeclimate.yml file\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !14\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-09T12:31:45.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nTypos and more\n\nCleanup to Gruntfile and Typo corrections.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !13\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-09T12:29:18.000Z",
+        "message": "Typos and more\n\nCleanup to Gruntfile and Typo corrections.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-08T12:36:21.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nGrunt Fixes and HTML Cleanups\n\nAdditional grunt corrections after testing, some js build files were missing for production mode.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !12\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-08T12:35:51.000Z",
+        "message": "Grunt Fixes and HTML Cleanups\n\nAdditional grunt corrections after testing, some js build files were missing for production mode.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n",
+        "eloc": 25,
+        "impact": 1.1698484420776367
+      },
+      {
+        "date": "2015-06-07T23:09:31.000Z",
+        "message": "Merge branch 'development' into 'master'\n\nGrunt Updates\n\nAdding missing files and reorganize for JS build. Cleaning up html files.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n\nSee merge request !11\n",
+        "eloc": 0,
+        "impact": 0
+      },
+      {
+        "date": "2015-06-07T23:08:30.000Z",
+        "message": "Grunt Updates\n\nAdding missing files and reorganize for JS build. Cleaning up html files.\n\nSigned-off-by: Merico Contributor <contributor@merico.dev>\n",
+        "eloc": 1716,
+        "impact": 9.563019871711731
+      }
+    ],
+    "interval": "day"
+  }
+}

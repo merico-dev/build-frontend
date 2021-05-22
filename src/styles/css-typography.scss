@@ -1,0 +1,16 @@
+@import "./variables/typography.scss";
+
+:root {
+  --text-semibold: #{$text-semibold};
+  --text-regular: #{$text-regular};
+  --text-xxxl: #{$text-xxxl};
+  --text-xxl: #{$text-xxl};
+  --text-xl: #{$text-xl};
+  --text-lg: #{$text-lg};
+  --text-md: #{$text-md};
+  --text-sm: #{$text-sm};
+  --text-xs: #{$text-xs};
+  --text-xxs: #{$text-xxs};
+  --line-height-sm: #{$line-height-sm};
+  --line-height-md: #{$line-height-md};
+}

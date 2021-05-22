@@ -1,0 +1,5 @@
+:root {
+  --sidebar-width: 235px;
+  --content-width-with-sidebar: calc(100vw - var(--sidebar-width));
+  --content-width-without-sidebar: calc(100vw);
+}

@@ -1,0 +1,8 @@
+{
+  "chromeWebSecurity": false,
+  "viewportWidth": 1360,
+  "viewportHeight": 768,
+  "baseUrl": "http://localhost:3000",
+  "screenshotOnRunFailure": false,
+  "video": false
+}

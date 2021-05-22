@@ -1,0 +1,8 @@
+.vercel
+.vscode
+node_modules
+dist
+.env
+src/locales/_build
+src/locales/**/*.js
+.DS_Store
