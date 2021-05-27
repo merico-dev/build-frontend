@@ -6,24 +6,28 @@ try {
 } catch (error) {
   console.info('INFO: No local.js config file found', error);
 }
-const staging = require('./staging');
-const production = require('./production1');
-const production2 = require('./production2');
-const sandbox = require('./sandbox');
-const e2e = require('./e2e');
+
+const loadConfigFile = (filePath) => {
+  try {
+    return require(filePath)
+  } catch (e) {
+    console.info(`resolveConfig:loadConfigFile: Could not load ${filePath} error=${e}`)
+  }
+}
 
 let config = local;
 const env = process.env.BUILD_ENV;
 
 if (env === 'staging') {
-  config = staging;
+  config = loadConfigFile('./staging.js')
 } else if (env === 'production2') {
-  config = production2;
+  config = loadConfigFile('./production2.js')
 } else if (env === 'production') {
-  config = production;
+  config = loadConfigFile('./production1.js')
 } else if (env === 'sandbox') {
-  config = sandbox;
+  config = loadConfigFile('./sandbox.js')
 } else if (env === 'e2e') {
-  config = e2e;
+  config = loadConfigFile('./e2e.js')
 }
+
 module.exports = config;
