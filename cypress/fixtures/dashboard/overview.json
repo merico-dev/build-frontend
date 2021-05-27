@@ -1,0 +1,59 @@
+{
+  "data": {
+    "gitUrl": "git://github.com/e2corporation/java-analysis-tester-2.git",
+    "url": "https://github.com/e2corporation/java-analysis-tester-2",
+    "repoName": "java-analysis-tester-2",
+    "interval": "day",
+    "ranking": [
+      {
+        "displayName": "Julien Chinapen",
+        "emails": [
+          "julien.chinapen@merico.dev"
+        ],
+        "userId": 49,
+        "gitUsername": "jchinapen-m",
+        "photo": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/7678110/avatar.png",
+        "productivity": 2831,
+        "productivityRank": 1,
+        "merges": 0,
+        "impact": 100,
+        "impactRank": 1,
+        "mergeRank": 2
+      },
+      {
+        "displayName": "Julien Chinapen",
+        "emails": [
+          "j.c@shogun.io"
+        ],
+        "userId": 48,
+        "gitUsername": "e2corporation",
+        "photo": "https://avatars.githubusercontent.com/u/1742233?v=4",
+        "productivity": 0,
+        "productivityRank": 2,
+        "merges": 1,
+        "impact": 0,
+        "impactRank": 2,
+        "mergeRank": 1
+      }
+    ],
+    "velocity": [
+      {
+        "date": "2021-04-29T12:00:00.000Z",
+        "elocs": 2831
+      }
+    ],
+    "population": [
+      {
+        "date": "2021-04-29T12:00:00.000Z",
+        "contributors": "2"
+      }
+    ],
+    "merges": [
+      {
+        "date": "2021-04-29T12:00:00.000Z",
+        "merged": 1,
+        "opened": 0
+      }
+    ]
+  }
+}

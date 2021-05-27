@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/preset-react",
+    "@lingui/babel-preset-react"
+  ],
+  "plugins": [
+    "emotion",
+    "macros",
+    "@babel/plugin-transform-runtime",
+    "@lingui/babel-plugin-transform-react"
+  ]
+}

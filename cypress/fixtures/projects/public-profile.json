@@ -1,0 +1,211 @@
+{
+  "data": {
+    "gitUrl": "git://github.com/rosa-merico-e2e/how-to-console-things.git",
+    "name": "how-to-console-things",
+    "webUrl": "https://github.com/rosa-merico-e2e/how-to-console-things",
+    "interval": "week",
+    "topContributors": [
+      {
+        "displayName": "Jonathan O'Donnell",
+        "emails": [
+          "joncodo@meri.co"
+        ],
+        "userId": null,
+        "gitUsername": "",
+        "photo": "",
+        "productivity": 93,
+        "productivityRank": 1,
+        "merges": 0,
+        "impact": 80.17241358757019,
+        "impactRank": 1,
+        "mergeRank": 1
+      },
+      {
+        "displayName": "Lucas Marques",
+        "emails": [
+          "lucaskauz@gmail.com"
+        ],
+        "userId": 1,
+        "gitUsername": "LucasKauz",
+        "photo": "https://avatars.githubusercontent.com/u/1552681?v=4",
+        "productivity": 23,
+        "productivityRank": 2,
+        "merges": 0,
+        "impact": 19.82758566737175,
+        "impactRank": 2,
+        "mergeRank": 1
+      },
+      {
+        "displayName": "",
+        "emails": [
+          "lucaskauz@gmail.com"
+        ],
+        "userId": 47,
+        "gitUsername": "rosa-merico-e2e",
+        "photo": "https://avatars.githubusercontent.com/u/78506115?v=4",
+        "productivity": 23,
+        "productivityRank": 2,
+        "merges": 0,
+        "impact": 19.82758566737175,
+        "impactRank": 2,
+        "mergeRank": 1
+      },
+      {
+        "displayName": "Lucas Marques",
+        "emails": [
+          "1552681+lucaskauz@users.noreply.github.com"
+        ],
+        "userId": null,
+        "gitUsername": "",
+        "photo": "",
+        "productivity": 0,
+        "productivityRank": 4,
+        "merges": 0,
+        "impact": 0,
+        "impactRank": 4,
+        "mergeRank": 1
+      }
+    ],
+    "population": [
+      {
+        "date": "2020-09-28T12:00:00.000Z",
+        "contributors": "1"
+      },
+      {
+        "date": "2020-10-05T12:00:00.000Z",
+        "contributors": "2"
+      },
+      {
+        "date": "2020-10-12T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-10-19T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-10-26T12:00:00.000Z",
+        "contributors": "1"
+      },
+      {
+        "date": "2020-11-02T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-11-09T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-11-16T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-11-23T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-11-30T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-12-07T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-12-14T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-12-21T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2020-12-28T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2021-01-04T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2021-01-11T12:00:00.000Z",
+        "contributors": "0"
+      },
+      {
+        "date": "2021-01-18T12:00:00.000Z",
+        "contributors": "1"
+      }
+    ],
+    "velocity": [
+      {
+        "date": "2020-09-28T12:00:00.000Z",
+        "elocs": 14
+      },
+      {
+        "date": "2020-10-05T12:00:00.000Z",
+        "elocs": 102
+      },
+      {
+        "date": "2020-10-12T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-10-19T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-10-26T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-11-02T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-11-09T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-11-16T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-11-23T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-11-30T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-12-07T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-12-14T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-12-21T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2020-12-28T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2021-01-04T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2021-01-11T12:00:00.000Z",
+        "elocs": 0
+      },
+      {
+        "date": "2021-01-18T12:00:00.000Z",
+        "elocs": 0
+      }
+    ],
+    "merges": []
+  }
+}

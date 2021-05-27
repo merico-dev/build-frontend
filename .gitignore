@@ -1,0 +1,15 @@
+.vercel
+.vscode
+node_modules
+dist
+.env
+src/locales/_build
+src/locales/**/*.js
+.DS_Store
+
+config/e2e.js
+config/production1.js
+config/production2.js
+config/sandbox.js
+config/staging.js
+config/local.js

@@ -1,0 +1,323 @@
+variables:
+  REGISTRY_PREFIX: 858104165444.dkr.ecr.us-west-2.amazonaws.com
+  ENV_STAGING: staging
+  ENV_PRODUCTION: production
+  DOCKER_HOST: tcp://docker:2375 #important for Dind
+  DOCKER_TLS_CERTDIR: "" # to avoid TLS requirement for docker
+  APP_NAME: ce-frontend
+  AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+  AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+  AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - test-e2e
+  - deploy
+
+before_script:
+  - |
+    echo -e "\e[96mBEFORE SCRIPT BEGIN:\n--------------------------------------------------------------\nTIME: $(date)\n--------------------------------------------------------------\e[39m"
+    apk update && apk upgrade && apk add --no-cache bash
+    export PYTHON_EXISTS=`which python`
+    export PYTHON3_EXISTS=`which python3`
+
+
+    #Python3 is needed by aws-cliv2
+    echo "Python=$PYTHON_EXISTS and Python3=$PYTHON3_EXISTS"
+    if [[ ! -z "$PYTHON3_EXISTS" && -z "$PYTHON_EXISTS"  ]]; then
+      ln -s /usr/bin/python3 /usr/bin/python
+    elif [[ -z "$PYTHON3_EXISTS" && -z "$PYTHON_EXISTS"  ]]; then
+      apk add --no-cache python3
+      ln -s /usr/bin/python3 /usr/bin/python
+    else
+      echo " Nothing to do we are good with python app."
+    fi
+
+    if [[ ! $(which docker) ]]; then
+      apk add --no-cache docker
+    fi
+
+    if [[ ! $(which curl) ]]; then
+      apk add --no-cache curl
+    fi
+
+    if [[ ! $(which aws) ]]; then
+      curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+      unzip awscli-bundle.zip
+      ls -la awscli-bundle/
+      awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+    fi
+
+    pwd=$(aws ecr get-login-password --region "${AWS_DEFAULT_REGION}")
+    docker login --username AWS --password "${pwd}" "${REGISTRY_PREFIX}"
+    export DOCKER_CONFIG_AWS=`cat ~/.docker/config.json`
+
+    #Store the dockerconfig created by the get-login to a gitlab variable.
+    if [[ ! -z "$DOCKER_CONFIG_AWS" ]]; then
+      echo "Updating Docker config gitlab variable."
+      curl -H "PRIVATE-TOKEN:$GITLAB_TOKEN" -H "Content-Type:multipart/form-data" -XPUT "https://gitlab.com/api/v4/projects/20103385/variables/DOCKER_AUTH_CONFIG" --form "value=$DOCKER_CONFIG_AWS"
+    fi
+    echo -e "\e[96mBEFORE SCRIPT END:\n--------------------------------------------------------------\nTIME: $(date)\n--------------------------------------------------------------\e[39m"
+
+cache:
+  key: ${CI_COMMIT_REF_NAME}
+  paths:
+    - node_modules/
+    - awscli-bundle/
+
+main_build:
+  stage: build
+  image:
+    name: mericomike/pipeline:latest
+    entrypoint: [""]
+  #we are only concerned of trigger that is not issued by pipeline and not a merge requests.
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "pipeline" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+  variables:
+    AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+    AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+    GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    - |
+
+      export IMAGE_NAME="$APP_NAME"
+      export TAG_TO_USE=$( [[ -z "$CI_COMMIT_BRANCH" ]] && echo "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" || echo "$CI_COMMIT_BRANCH" )
+
+      #Charts are using a specific version (9135720) as defined below, please ask engineers if this starts failing.
+
+      # cd packages/charts && git checkout 1.5.1 && cd ../../
+      export FULL_IMAGE_NAME="$REGISTRY_PREFIX/$IMAGE_NAME:$TAG_TO_USE-$CI_COMMIT_SHORT_SHA"
+      echo "FullImage=$FULL_IMAGE_NAME please wait while AWSCliv2 get installed."
+
+      # These are the configs that are stored on the gitlab variables.
+      cp -R "${CONFIG_E2E}"  /builds/merico-dev/ce/$APP_NAME/config/e2e.js
+      cp -R "${CONFIG_LOCAL}"  /builds/merico-dev/ce/$APP_NAME/config/local.js
+      cp -R "${CONFIG_PRODUCTION1}" /builds/merico-dev/ce/$APP_NAME/config/production1.js
+      cp -R "${CONFIG_PRODUCTION2}"  /builds/merico-dev/ce/$APP_NAME/config/production2.js
+      cp -R "${CONFIG_SANDBOX}"  /builds/merico-dev/ce/$APP_NAME/config/sandbox.js
+      cp -R "${CONFIG_STAGING}"  /builds/merico-dev/ce/$APP_NAME/config/staging.js
+
+      echo "Starting docker build ... "
+      if [[ "$TAG_TO_USE" == "production" ]]; then
+        docker build -f Dockerfile.production -t $FULL_IMAGE_NAME .
+      elif [[ "$TAG_TO_USE" == "sandbox" ]]; then
+        docker build -f Dockerfile.sandbox -t $FULL_IMAGE_NAME .
+      else
+        docker build -f Dockerfile.staging -t $FULL_IMAGE_NAME .
+      fi
+
+      echo "Logging in to ecr registry... command variables=$AWS_DEFAULT_REGION + $REGISTRY_PREFIX "
+      pwd=$(aws ecr get-login-password --region "${AWS_DEFAULT_REGION}")
+      docker login --username AWS --password "${pwd}" "${REGISTRY_PREFIX}"
+      echo "Pushing image ${FULL_IMAGE_NAME} to repo with tag"
+      docker push $FULL_IMAGE_NAME
+
+# base stage for e2e that is shared between FE triggered and BE Triggered
+.run-test-e2e-base: &e2e-base
+  stage: test-e2e
+  image:
+    name: mericomike/pipeline:latest
+    # OLD Image: registry.gitlab.com/merico-dev/ce/ce-backend/merico-dc:latest
+  variables:
+    AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+    AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+    GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    - |
+      export TAG_TO_USE=$( [[ -z "$CI_COMMIT_BRANCH" ]] && echo "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" || echo "$CI_COMMIT_BRANCH" )
+
+      # These are the configs that are stored on the gitlab variables.
+      cp -R "${CONFIG_E2E}"  /builds/merico-dev/ce/$APP_NAME/config/e2e.js
+      cp -R "${CONFIG_LOCAL}"  /builds/merico-dev/ce/$APP_NAME/config/local.js
+      cp -R "${CONFIG_PRODUCTION1}" /builds/merico-dev/ce/$APP_NAME/config/production1.js
+      cp -R "${CONFIG_PRODUCTION2}"  /builds/merico-dev/ce/$APP_NAME/config/production2.js
+      cp -R "${CONFIG_SANDBOX}"  /builds/merico-dev/ce/$APP_NAME/config/sandbox.js
+      cp -R "${CONFIG_STAGING}"  /builds/merico-dev/ce/$APP_NAME/config/staging.js
+
+      #this is FE triggered as the expected variable is empty, this is passed from the pipeline.
+      if [[ -z "$DOCKER_BE_HASH"  ]]; then
+
+         echo "setting up env NODE_ENV: $NODE_ENV TAG_TO_USE1hash: ${TAG_TO_USE}1hash"
+         VARS="$TAG_TO_USE"1hash
+
+         if [[ "$TAG_TO_USE" == "production" ||  "$TAG_TO_USE" == "sandbox" ||  "$TAG_TO_USE" == "staging"  ]]; then
+           echo "Variables for this branch is should exist, so we should fetch properly. Backend variables for hash builds."
+         else
+           VARS="master1hash"
+         fi
+
+         #Read from variables of BE to get the compatible hash version for this corresponding branch build.
+         export hash_be=$(curl -H "PRIVATE-TOKEN:$GITLAB_TOKEN" -H "Content-Type:multipart/form-data" -XGET "https://gitlab.com/api/v4/projects/20103385/variables/$VARS" | jq '.value' -r )
+         echo "Latest hash backend ${hash_be}"
+         sed -i -e "s|ce-backend:__HASH__|ce-backend:${hash_be}|g" /builds/merico-dev/ce/$APP_NAME/docker-compose.yml
+      else
+         echo "setting up env NODE_ENV: ${NODE_ENV} DOCKER_BE_HASH: ${DOCKER_BE_HASH}"
+         sed -i -e "s|ce-backend:__HASH__|ce-backend:$DOCKER_BE_HASH|g" /builds/merico-dev/ce/ce-frontend/docker-compose.yml
+      fi
+
+      pwd=$(aws ecr get-login-password --region "${AWS_DEFAULT_REGION}")
+      docker login --username AWS --password "${pwd}" "${REGISTRY_PREFIX}"
+      docker image prune -f
+      #if the BE triggers, the git repo pulled was BE, so the pipeline will have BE instead of FE, so we have to hard-code here (/builds/merico-dev/ce/ce-frontend/docker-compose.yml) to point to the correct repo. It can be passed via variables however and maybe override, I have not tested that.
+      if [[ -z "$DOCKER_BE_HASH"  ]]; then
+        docker-compose -f /builds/merico-dev/ce/$APP_NAME/docker-compose.yml up --abort-on-container-exit
+      else
+        docker-compose -f /builds/merico-dev/ce/ce-frontend/docker-compose.yml up --abort-on-container-exit
+      fi
+
+.deploy: &deploy
+  stage: deploy
+  image: mericomike/pipeline:latest
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    - |
+      echo "DEBUG INFO:"
+      echo "APP_NAME = '$APP_NAME'"
+
+      # This is a patch to get the pipeline working while I figure out why its happening in the first place.
+      echo "###################### BEGIN APP_NAME PATCH"
+      if [[ $APP_NAME = 'ce-backend' ]]; then echo "APP_NAME IS INCORRECT... CORRECTING";APP_NAME="ce-frontend"; echo "APP_NAME = '$APP_NAME'"; fi
+      echo "###################### END APP_NAME PATCH"
+
+      ls -la /builds/merico-dev/ce/$APP_NAME/k8s
+      echo " doing a deployment please wait ... "
+      echo " ============== START NEW CLUSTER DEPLOYMENT =============="
+      echo " ========= SETUP AWS CLI ========= "
+      apk update
+      apk add --no-cache \
+       python3 \
+       py3-pip \
+       && pip3 install --upgrade pip \
+       && pip3 install \
+       awscli \
+       && rm -rf /var/cache/apk/*
+      echo " --- CONFIGURE AWS CLI"
+      export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" && echo "SUCCESS: SET AWS_ACCESS_KEY_ID" || echo "FAIL: SET AWS_ACCESS_KEY_ID"
+      export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" && echo "SUCCESS: SET AWS_SECRET_ACCESS_KEY" || echo "FAIL: SET AWS_SECRET_ACCESS_KEY"
+      export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION}" && echo "SUCCESS: SET AWS_DEFAULT_REGION" || echo "FAIL: SET AWS_DEFAULT_REGION"
+      echo " --- TEST AWS CLI (LIST ALL CLUSTERS)"
+      aws --version
+      aws eks list-clusters --output text
+      echo "========= START =========="
+      if [[ "$environment" == "production" ]]; then
+        echo "Environment set to: ['$environment']"
+        echo "====> Deploying To first cluster"
+        aws eks update-kubeconfig --name CE-Merico-Build-NA-Prod-Cluster && echo "Successfully started EKS session with production cluster" || echo "Failed to start EKS session with production cluster"
+        kubectl config use-context arn:aws:eks:us-west-2:858104165444:cluster/CE-Merico-Build-NA-Prod-Cluster && echo "Successfully switched context to new production cluster" || echo "Failed to switch context to new production cluster"
+        kubectl get pods
+        # Deploy to Kubernetes
+        sed -e "s|$APP_NAME:$CI_COMMIT_BRANCH|$APP_NAME:$CI_COMMIT_BRANCH-$CI_COMMIT_SHORT_SHA|g" /builds/merico-dev/ce/$APP_NAME/k8s/${environment}.yml | kubectl apply -f -
+        # Restart the deployment after applying.
+        kubectl rollout restart deployment "ce-build-frontend-$environment"
+        sleep 5
+
+        echo "====> Deploying To second cluster"
+        aws eks update-kubeconfig --name CE-Merico-Build-NA-Prod2-Cluster && echo "Successfully started EKS session with production2 cluster" || echo "Failed to start EKS session with production2 cluster"
+        kubectl config use-context arn:aws:eks:us-west-2:858104165444:cluster/CE-Merico-Build-NA-Prod2-Cluster && echo "Successfully switched context to new production2 cluster" || echo "Failed to switch context to new production2 cluster"
+        kubectl get pods
+        # Deploy to Kubernetes
+        sed -e "s|$APP_NAME:$CI_COMMIT_BRANCH|$APP_NAME:$CI_COMMIT_BRANCH-$CI_COMMIT_SHORT_SHA|g" /builds/merico-dev/ce/$APP_NAME/k8s/${environment}.yml | kubectl apply -f -
+        # Restart the deployment after applying.
+        kubectl rollout restart deployment "ce-build-frontend-$environment"
+
+      elif [[ "$environment" == "candidate" ]]; then
+        echo "Environment set to: ['$environment']"
+        echo "====> Deploying To first cluster"
+        aws eks update-kubeconfig --name CE-Merico-Build-NA-Prod-Cluster && echo "Successfully started EKS session with production cluster" || echo "Failed to start EKS session with production cluster"
+        kubectl config use-context arn:aws:eks:us-west-2:858104165444:cluster/CE-Merico-Build-NA-Prod-Cluster && echo "Successfully switched context to new production cluster" || echo "Failed to switch context to new production cluster"
+        kubectl get pods
+        # Deploy to Kubernetes
+        sed -e "s|$APP_NAME:$CI_COMMIT_BRANCH|$APP_NAME:$CI_COMMIT_BRANCH-$CI_COMMIT_SHORT_SHA|g" /builds/merico-dev/ce/$APP_NAME/k8s/${environment}.yml | kubectl apply -f -
+        # Restart the deployment after applying.
+        kubectl rollout restart deployment "ce-build-frontend-$environment"
+        sleep 5
+
+        echo "====> Deploying To second cluster"
+        aws eks update-kubeconfig --name CE-Merico-Build-NA-Prod2-Cluster && echo "Successfully started EKS session with production2 cluster" || echo "Failed to start EKS session with production2 cluster"
+        kubectl config use-context arn:aws:eks:us-west-2:858104165444:cluster/CE-Merico-Build-NA-Prod2-Cluster && echo "Successfully switched context to new production2 cluster" || echo "Failed to switch context to new production2 cluster"
+        kubectl get pods
+        # Deploy to Kubernetes
+        sed -e "s|$APP_NAME:$CI_COMMIT_BRANCH|$APP_NAME:$CI_COMMIT_BRANCH-$CI_COMMIT_SHORT_SHA|g" /builds/merico-dev/ce/$APP_NAME/k8s/${environment}.yml | kubectl apply -f -
+        # Restart the deployment after applying.
+        kubectl rollout restart deployment "ce-build-frontend-$environment"
+
+      elif [[ "$environment" == "staging" || "$environment" == "master" || "$environment" == "benchmark" ]]; then
+        echo "Environment set to: ['$environment']"
+        aws eks update-kubeconfig --name CE-Merico-Build-NA-Staging-Cluster && echo "Successfully started EKS session with staging cluster" || echo "Failed to start EKS session with staging cluster"
+        kubectl config use-context arn:aws:eks:us-west-2:858104165444:cluster/CE-Merico-Build-NA-Staging-Cluster && echo "Successfully switched context to new staging cluster" || echo "Failed to switch context to new staging cluster"
+        kubectl get pods
+        # Deploy to Kubernetes
+        sed -e "s|$APP_NAME:$CI_COMMIT_BRANCH|$APP_NAME:$CI_COMMIT_BRANCH-$CI_COMMIT_SHORT_SHA|g" /builds/merico-dev/ce/$APP_NAME/k8s/${environment}.yml | kubectl apply -f -
+        # Restart the deployment after applying.
+        kubectl rollout restart deployment "ce-build-frontend-$environment"
+
+      elif [[ "$environment" == "sandbox" ]]; then
+        echo "Environment set to: ['$environment']"
+        aws eks update-kubeconfig --name CE-Merico-Build-NA-Sandbox-Cluster && echo "Successfully started EKS session with sandbox cluster" || echo "Failed to start EKS session with sandbox cluster"
+        kubectl config use-context arn:aws:eks:us-west-2:858104165444:cluster/CE-Merico-Build-NA-Sandbox-Cluster && echo "Successfully switched context to new staging cluster" || echo "Failed to switch context to new staging cluster"
+        kubectl get pods
+        # Deploy to Kubernetes
+        sed -e "s|$APP_NAME:$CI_COMMIT_BRANCH|$APP_NAME:$CI_COMMIT_BRANCH-$CI_COMMIT_SHORT_SHA|g" /builds/merico-dev/ce/$APP_NAME/k8s/${environment}.yml | kubectl apply -f -
+        # Restart the deployment after applying.
+        kubectl rollout restart deployment "ce-build-frontend-$environment"
+
+      else
+        echo "Deployment to new EKS clusters failed, debug info below..."
+        echo " --- VARIABLES"
+        echo "Environment set to: ['$environment']"
+        echo " --- KUBECTL VERSION"
+        kubectl version
+      fi;
+      echo " ========== END NEW CLUSTER DEPLOYMENT ========== "
+      sleep 5
+      kubectl get po
+
+deploy sandbox:
+  <<: *deploy
+  environment:
+    name: sandbox
+  variables:
+    environment: sandbox
+  only:
+    - sandbox
+
+deploy staging:
+  <<: *deploy
+  environment:
+    name: staging
+  variables:
+    environment: staging
+  only:
+    - staging
+    - master
+
+deploy production:
+  <<: *deploy
+  environment:
+    name: production
+  variables:
+    environment: production
+  only:
+    - production
+
+# BE Trigger
+run-test-e2e run-test-e2e-be-trigger:
+  <<: *e2e-base
+  variables:
+    DOCKER_BE_HASH: ${DOCKER_BE_HASH}
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $CI_PIPELINE_SOURCE != "merge_request_event"'
+
+# FE Trigger
+run-test-e2e run-test-e2e-fe-trigger:
+  <<: *e2e-base
+  variables:
+    DOCKER_BE_HASH: ""
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "pipeline" && $CI_PIPELINE_SOURCE != "merge_request_event"'

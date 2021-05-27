@@ -1,0 +1,17 @@
+{
+  "add-repo:alreadyExist": "how-to-console-things",
+  "add-repo:single": "responsive-tester",
+  "delete-repos:single": "js-callgraph",
+  "delete-repos:multiple": [
+    "workshop-devtools",
+    "repo-without-minesweeper"
+  ],
+  "favorites:add": "java-analysis-tester",
+  "dashboard:isFavorited": "how-to-console-things",
+  "dashboard:singleRepository": {
+    "name": "how-to-console-things",
+    "gitUrl": "git://github.com/rosa-merico-e2e/how-to-console-things.git"
+  },
+  "onboarding:single": "career_rush",
+  "onboarding:external": "https://github.com/LucasKauz/LucasKauz.git"
+}
